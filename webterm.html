@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>webterm</title>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="css/header.css" type="text/css">
+	<style type="text/css">
+		#prompt {
+			font-family: menlo;
+		}
+	
+		.fixedwidth td {
+			font-family: monaco;
+		}
+	</style>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			$("#prompt").focus();
+		});
+		
+		window.webterm = function(){
+			this.x = "hello";
+			document.write("<p>I am running!</p>");
+		}();
+		
+		alert(webterm.x);
+	</script>
+</head>
+<body>
+	<div class="container">
+		
+		
+		<!-- <div class="masthead">
+			<h3 class="muted">PostJS</h3>
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<ul class="nav">
+							<li class="active"><a href="#">Home</a></li>
+							<li><a href="#">Commands</a></li>
+							<li><a href="#">Help</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		
+		
+		<!-- <div class="jumbotron">
+					<h1>PostJS</h1>
+					<p class="lead">A postfix language and environment that runs entirely in the browser.</p>
+					<a class="btn btn-large btn-success" href="#">View on github</a>
+				</div> -->
+		
+		
+		<div class="row">
+			<div class="span6">
+				<!-- STACK -->
+				<h3>Stack</h3>
+				<p>The stack is your working scratchpad.</p>
+				<table class="table table-striped fixedwidth table-hover" border="1">
+					<tr>
+						<th class="span1">#</th>
+						<th class="span9">Entry</th>
+						<th class="span2">Type</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>#sandbox</td>
+						<td>DOMSelector</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>"color"</td>
+						<td>String</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>"red"</td>
+						<td>String</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>[ 1 2 3 ]</td>
+						<td>Array</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>{ 2 * }</td>
+						<td>Block</td>
+					</tr>
+				</table>
+			</div>
+			<div class="span6">
+				<!-- BUFFERS -->
+				<h3>Buffers</h3>
+				<p>Push/pop objects into named buffers.</p>
+				<table class="table table-striped fixedwidth table-hover" border="1">
+					<tr>
+						<th class="span1"></th>
+						<th class="span2">Name</th>
+						<th class="span7">Contents</th>
+						<th class="span2">Type</th>
+					</tr>
+					<tr>
+						<td>A</td>
+						<td>msg</td>
+						<td>"hello world"</td>
+						<td>String</td>
+					</tr>
+					<tr>
+						<td>D</td>
+						<td>pi</td>
+						<td>3.14</td>
+						<td>Float</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<hr/>
+
+		<div class="row">
+			<div class="span12">
+				<h3>Prompt</h3>
+				<div class="row">
+					<div class="span6">
+						Here is where you can manipulate the stack and run commands.
+					</div>
+				</div>
+				<input type="text" name="prompt" id="prompt" class="span12" placeholder="run your commands here">
+				<br/>
+				Mode <div class="btn btn-warning">Stack navigation</div>
+			</div>
+		</div>
+		
+		<hr/>
+
+		<div class="row">
+			<div class="span8">
+				<h3>Key bindings</h3>
+				<div class="span4">
+					
+				</div>
+				<div class="row">
+
+				</div>
+				<table class="table table-striped fixedwidth table-hover" border="1">
+					<tr>
+						<th class="span2">Key</th>
+						<th class="span4">Command</th>
+						<th class="span6">Description</th>
+					</tr>
+					<tr>
+						<td>C-n</td>
+						<td>next</td>
+						<td>move cursor to the next entry</td>
+					</tr>
+					<tr>
+						<td>C-p</td>
+						<td>previous</td>
+						<td>move cursor to the previous entry</td>
+					</tr>
+				</table>
+			</div>
+			<div class="span4">
+				<h3>History</h3>
+				<table class="table table-striped fixedwidth table-hover" border="1">
+					<tr>
+						<th class="span2">History</th>
+						<th class="span10">Entry</th>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>join</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>"world"</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>"hello"</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
